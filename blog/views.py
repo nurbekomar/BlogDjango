@@ -11,8 +11,40 @@ menu = [{'title': 'Blog', 'url_name': 'blog'},
 
 def index(request):
     posts = Blog.objects.all()
-    return render(request, 'blog/index.html', {'title': 'BlogNurbek', 'menu': menu, 'posts': posts})
+    context = {
+        'posts': posts,
+        'menu': menu,
+    }
+    return render(request, 'blog/index.html', context=context)
+
+
+def blog(request):
+    posts = Blog.objects.all()
+    context = {
+        'posts': posts,
+        'menu': menu,
+    }
+    return render(request, 'blog/blog.html', context=context)
+
+
+def show_post(request, post_id):
+    posts = Blog.objects.all()
+    context = {
+        'posts': posts,
+        'menu': menu,
+    }
+    return render(request, 'blog/show_post.html', context=context)
+
+
+def project(request):
+    context = {
+        'menu': menu,
+    }
+    return render(request, 'blog/project.html', context=context)
 
 
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'About NurbekTech', 'menu': menu})
+    context = {
+        'menu': menu,
+    }
+    return render(request, 'blog/about.html', context=context)
