@@ -3,7 +3,10 @@ from django.http import HttpResponse
 from blog.models import *
 # Create your views here.
 
-menu = ['Блог', 'Проекты', 'О нас']
+menu = [{'title': 'Blog', 'url_name': 'blog'},
+        {'title': 'Project', 'url_name': 'project'},
+        {'title': 'About', 'url_name': 'about'}
+        ]
 
 
 def index(request):

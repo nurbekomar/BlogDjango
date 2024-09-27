@@ -12,12 +12,14 @@
         <nav class="nav">
             <div class="container">
                 <div class="nav-row">
-                    <a href="/" class="logo">LOGO</a>
-                    <div class="nav-list">
+                    <a href="{% url "home" %}" class="logo">NurbekTech</a>
+                    <ul class="nav-list">
                         {% for m in menu %}
-                            <a class="nav-list" href="#">{{m}}</a>
+                            <li class="nav-list__item">
+                                <a href="#" class="nav-list__link">{{m}}</a>
+                            </li>
                         {% endfor %}
-                    </div>
+                    </ul>
                 </div>
             </div>
         </nav>
